@@ -1,5 +1,13 @@
 # Project 3: Spots
 
+an image sharing website that can be used on desktop, tablet, and mobile!
+
+## Tech Stack
+
+-HTML
+-CSS
+-Responsive design
+
 ### Overview
 
 - Intro
@@ -21,3 +29,7 @@ The way you'll do this at work is by exporting images directly from Figma — we
 Good luck and have fun!
 
 heres my revision thank you so much for the review it really helped point me in the right direction, this assignment was tricky!
+
+## Deployment
+
+-Deployment link:
