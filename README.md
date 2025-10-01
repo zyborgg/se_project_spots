@@ -20,4 +20,4 @@ The way you'll do this at work is by exporting images directly from Figma — we
 
 Good luck and have fun!
 
-I've been going back and forth for days fixing elements only for something else to break ive been hopping in and out of calls with several different people and im hitting a wall. im submitting this to you now aware that there are some flaws because i need your review so i can better target these issues because i have no direction anymore. thank you- Ziah
+heres my revision thank you so much for the review it really helped point me in the right direction, this assignment was tricky!
