@@ -29,5 +29,5 @@ heres my revision thank you so much for the review it really helped point me in 
 
 ## Deployment
 
--Deployment link: https://zyborgg.github.io/se_project_spots/
+-Deployment link: https://github.com/zyborgg/se_project_spots.git
 -Video showcasing project link: https://drive.google.com/file/d/1fOQx4MpRSi5NVqOp-Q0aQW8R-7wf-kUO/view?usp=sharing
