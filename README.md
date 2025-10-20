@@ -31,3 +31,5 @@ heres my revision thank you so much for the review it really helped point me in 
 
 -Deployment link: https://zyborgg.github.io/se_project_spots
 -Video showcasing project link: https://drive.google.com/file/d/1fOQx4MpRSi5NVqOp-Q0aQW8R-7wf-kUO/view?usp=sharing
+
+updated to stage 4 of spots with modals that open and close!
