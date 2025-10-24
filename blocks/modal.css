@@ -17,6 +17,7 @@
 .modal_is-opened {
   visibility: visible;
   opacity: 1;
+  display: flex;
 }
 
 .modal__container {
@@ -42,7 +43,7 @@
 
 .modal__close-button:hover {
   cursor: pointer;
-  color: #212121;
+  opacity: 1;
 }
 
 .modal__title {
@@ -63,9 +64,9 @@
   width: 100%;
   font-size: 20px;
   border-radius: 8px;
-  gap: 32px;
   padding: 16px 12px;
   border: 1px solid rgba(33, 33, 33, 0.4);
+  box-sizing: border-box;
 }
 
 .modal__input::placeholder {
@@ -89,6 +90,8 @@
   gap: 8px;
   max-width: 156px;
   height: 52px;
+  border: none;
+  cursor: pointer;
 }
 
 .modal__submit-button:hover {
@@ -98,7 +101,7 @@
 }
 
 .modal__input:hover {
-  cursor: pointer;
+  border-color: rbga (33, 33, 33, 0.6);
 }
 
 @media screen and (max-width: 630px) {
