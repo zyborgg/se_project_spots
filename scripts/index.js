@@ -14,8 +14,8 @@ const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
 
 editProfileButton.addEventListener("click", function () {
-  editProfileNameInput.value = profileNameEl.textContent;
-  editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+  editProfileNameInput.value = profileNameEl.textContent.trim();
+  editProfileDescriptionInput.value = profileDescriptionEl.textContent.trim();
   editProfileModal.classList.add("modal_is-opened");
 });
 
@@ -25,8 +25,8 @@ editProfileCloseButton.addEventListener("click", function () {
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
-  profileNameEl.textContent = editProfileNameInput.value;
-  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
+  profileNameEl.textContent = editProfileNameInput.value.trim();
+  profileDescriptionEl.textContent = editProfileDescriptionInput.value.trim();
   editProfileModal.classList.remove("modal_is-opened");
 }
 
