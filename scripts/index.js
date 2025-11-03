@@ -25,6 +25,15 @@ const initialCards = [
   },
 ];
 
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
+
+//edit profile stuff
 const editProfileButton = document.querySelector(".profile__edit-button");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseButton = editProfileModal.querySelector(
@@ -43,19 +52,21 @@ const profileDescriptionEl = document.querySelector(".profile__description");
 editProfileButton.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent.trim();
   editProfileDescriptionInput.value = profileDescriptionEl.textContent.trim();
-  editProfileModal.classList.add("modal_is-opened");
+  openModal(editProfileModal);
 });
 
 editProfileCloseButton.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 });
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value.trim();
   profileDescriptionEl.textContent = editProfileDescriptionInput.value.trim();
-  editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 }
+
+//new post stuff
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
@@ -64,11 +75,11 @@ const newProfileModal = document.querySelector("#new-post-modal");
 const newCloseButton = newProfileModal.querySelector(".modal__close-button");
 
 newProfileButton.addEventListener("click", function () {
-  newProfileModal.classList.add("modal_is-opened");
+  openModal(newProfileModal);
 });
 
 newCloseButton.addEventListener("click", function () {
-  newProfileModal.classList.remove("modal_is-opened");
+  closeModal(newProfileModal);
 });
 
 const newCardFormElement = newProfileModal.querySelector(".modal__form");
@@ -79,7 +90,7 @@ function handleAddCardSubmit(evt) {
   evt.preventDefault();
   console.log(imageInput.value);
   console.log(captionInput.value);
-  newProfileModal.classList.remove("modal_is-opened");
+  closeModal(newProfileModal);
 }
 newCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
