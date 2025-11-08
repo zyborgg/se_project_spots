@@ -25,6 +25,28 @@ const initialCards = [
   },
 ];
 
+const cardTemplate = document
+  .querySelector("#card-template")
+  .content.querySelector(".card");
+const cardsList = document.querySelector(".cards__list");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardTitleEl = cardElement.querySelector(".card__title");
+  const cardImageEl = cardElement.querySelector(".card__image");
+
+  cardImageEl.src = data.link;
+  cardTitleEl.alt = data.name;
+  cardTitleEl.textContent = data.name;
+
+  const cardLikeBtnEl = cardElement.querySelector(".card__like-button");
+  cardLikeBtnEl.addEventListener("click", () => {
+    cardLikeBtnEl.classList.toggle(".card__like-button_active");
+  });
+
+  return cardElement;
+}
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
 }
@@ -88,13 +110,17 @@ const captionInput = document.querySelector("#caption-input");
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  console.log(imageInput.value);
-  console.log(captionInput.value);
+  const inputValues = {
+    name: captionInput.value,
+    link: imageInput.value,
+  };
+  const cardElement = getCardElement(inputValues);
+  cardsList.prepend(cardElement);
   closeModal(newProfileModal);
 }
 newCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
 initialCards.forEach(function (item) {
-  console.log(item.name);
-  console.log(item.link);
+  const cardElement = getCardElement(item);
+  cardsList.append(cardElement);
 });
