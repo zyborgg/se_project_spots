@@ -46,6 +46,11 @@
   opacity: 1;
 }
 
+.modal__close-button-preview {
+  background: none;
+  background-repeat: no-repeat;
+}
+
 .modal__title {
   margin: 0 0 32px;
   line-height: 100%;
@@ -118,9 +123,12 @@
 
 .modal__caption {
   color: white;
-  font-size: 32px;
+  font-size: 20px;
   font-weight: 500;
+  line-height: 120%;
   font-family: Poppins, Arial, Helvetica, sans-serif;
+  background: #212121;
+  background-size: contain;
 }
 
 @media screen and (max-width: 630px) {
