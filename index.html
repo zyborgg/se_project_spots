@@ -50,19 +50,19 @@
         </section>
         <section class="cards page__section">
           <ul class="cards__list">
-              <template id="card-template">
-                <li class="card">
-                  <button class="card__delete-button" type="button"></button>
-                  <img class="card__image" />
-                  <div class="card__footer">
-                    <h2 class="card__title"></h2>
-                    <button
+            <template id="card-template">
+              <li class="card">
+                <button class="card__delete-button" type="button"></button>
+                <img class="card__image" />
+                <div class="card__footer">
+                  <h2 class="card__title"></h2>
+                  <button
                     aria-label="Like card"
-                    class="card__like-button"></button>
-                  </div>
-                </li>
-              </template>
-            </li>
+                    class="card__like-button"
+                  ></button>
+                </div>
+              </li>
+            </template>
           </ul>
         </section>
       </main>
@@ -130,13 +130,20 @@
       <div class="modal modal_type_preview" id="preview-modal">
         <div class="modal__image-container">
           <button
-          aria-label="close modal"
-          class="modal__close modal__close_type_preview"
-          type="button">
+            aria-label="close modal"
+            class="modal__close modal__close_type_preview"
+            type="button"
+          >
             <img src="./images/previewclosebutton.svg" alt="close-button" />
           </button>
-          <img src="https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg" alt="demo" class="modal__image">
+          <img
+            src="https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg"
+            alt="demo"
+            class="modal__image"
+          />
           <p class="modal__caption"></p>
+        </div>
+      </div>
     </div>
     <script src="./scripts/index.js"></script>
   </body>
