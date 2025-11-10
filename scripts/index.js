@@ -34,6 +34,15 @@ const cardTemplate = document
   .content.querySelector(".card");
 const cardsList = document.querySelector(".cards__list");
 
+const previewModal = document.querySelector("#preview-modal");
+const previewModalCloseBtn = previewModal.querySelector(".modal__close");
+const previewModalImageEl = previewModal.querySelector(".modal__image");
+const previewModalCaption = previewModal.querySelector(".modal__caption");
+
+previewModalCloseBtn.addEventListener("click", () => {
+  closeModal(previewModal);
+});
+
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitleEl = cardElement.querySelector(".card__title");
@@ -53,6 +62,13 @@ function getCardElement(data) {
     cardDeleteBtnEl.closest(".card").remove();
   });
 
+  cardImageEl.addEventListener("click", () => {
+    previewModalImageEl.src = data.link;
+    previewModalImageEl.alt = data.name;
+    previewModalCaption.textContent = data.name;
+    openModal(previewModal);
+  });
+
   return cardElement;
 }
 
@@ -67,9 +83,7 @@ function closeModal(modal) {
 //edit profile stuff
 const editProfileButton = document.querySelector(".profile__edit-button");
 const editProfileModal = document.querySelector("#edit-profile-modal");
-const editProfileCloseButton = editProfileModal.querySelector(
-  ".modal__close-button"
-);
+const editProfileCloseButton = editProfileModal.querySelector(".modal__close");
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input"
@@ -103,7 +117,7 @@ editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 const newProfileButton = document.querySelector(".profile__add-button");
 const newProfileModal = document.querySelector("#new-post-modal");
-const newCloseButton = newProfileModal.querySelector(".modal__close-button");
+const newCloseButton = newProfileModal.querySelector(".modal__close");
 
 newProfileButton.addEventListener("click", function () {
   openModal(newProfileModal);

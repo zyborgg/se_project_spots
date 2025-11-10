@@ -71,7 +71,7 @@
       </footer>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-button">
+          <button type="button" class="modal__close">
             <img src="./images/close.svg" alt="close button" />
           </button>
           <h2 class="modal__title">Edit profile</h2>
@@ -100,7 +100,7 @@
       </div>
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-button">
+          <button type="button" class="modal__close">
             <img src="./images/close.svg" alt="close button" />
           </button>
           <h2 class="modal__title">New Post</h2>
@@ -127,13 +127,16 @@
           </form>
         </div>
       </div>
-      <div class="modal modal_is-opened" id="preview-modal">
+      <div class="modal modal_type_preview" id="preview-modal">
         <div class="modal__image-container">
-          <button type="button" class="modal__close-button">
-            <img src="./images/close.svg" alt="close-button" />
+          <button
+          aria-label="close modal"
+          class="modal__close modal__close_type_preview"
+          type="button">
+            <img src="./images/previewclosebutton.svg" alt="close-button" />
           </button>
           <img src="https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg" alt="demo" class="modal__image">
-          <p class="modal__caption">Golden Gate Bridge</p>
+          <p class="modal__caption"></p>
     </div>
     <script src="./scripts/index.js"></script>
   </body>

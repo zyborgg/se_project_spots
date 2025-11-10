@@ -109,3 +109,33 @@ copy of html cards as backup
             </li>
           </ul>
         </section>
+
+media query backup
+@media screen and (max-width: 630px) {
+.modal {
+padding-left: 12px;
+padding-right: 12px;
+}
+
+.modal\_\_title {
+font-size: 20px;
+}
+
+.modal\_\_close {
+top: 22px;
+right: 12px;
+}
+
+.modal\_\_form {
+max-width: 276px;
+}
+
+.modal\_\_input {
+font-size: 16px;
+}
+
+.modal\_\_submit-button {
+width: 100%;
+max-width: none;
+}
+}
