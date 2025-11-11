@@ -35,7 +35,7 @@
 .profile__description {
   max-width: 420px;
   margin: 0;
-  opacity: 70%;
+  opacity: 0.7;
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
@@ -63,7 +63,7 @@
 
 .profile__edit-button:hover {
   cursor: pointer;
-  opacity: 100%;
+  opacity: 1;
   transition: all 0.3s ease;
 }
 

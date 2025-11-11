@@ -42,7 +42,7 @@
   height: 40px;
   border: none;
   background-color: #fff;
-  opacity: 40%;
+  opacity: 0.4;
 }
 
 .modal__close:hover {
@@ -115,11 +115,11 @@
 .modal__submit-button:hover {
   cursor: pointer;
   background-color: #212121;
-  opacity: 80%;
+  opacity: 0.8;
 }
 
 .modal__input:hover {
-  border-color: rbga(33, 33, 33, 0.6);
+  border-color: rgba(33, 33, 33, 0.6);
 }
 
 .modal__image-container {
@@ -177,7 +177,7 @@
   }
 }
 
-@media screen and (max-width: 627px) {
+@media screen and (max-width: 630px) {
   .modal__close_type_preview {
     top: -45px;
     right: 0;

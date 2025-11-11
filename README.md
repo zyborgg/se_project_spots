@@ -34,3 +34,9 @@ heres my revision thank you so much for the review it really helped point me in 
 -Video showing modal open and closing animations link: https://drive.google.com/file/d/1rz3BdzhAJ1z5YKwD6d__emV0XwLUBKKn/view?usp=sharing
 
 updated to spots stage 8 generating cards dynamically
+
+original delete function
+const cardDeleteBtnEl = cardElement.querySelector(".card\_\_delete-button");
+cardDeleteBtnEl.addEventListener("click", () => {
+cardDeleteBtnEl.closest(".card").remove();
+});

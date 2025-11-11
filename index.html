@@ -53,7 +53,7 @@
             <template id="card-template">
               <li class="card">
                 <button class="card__delete-button" type="button"></button>
-                <img class="card__image" />
+                <img class="card__image" alt="image for card" />
                 <div class="card__footer">
                   <h2 class="card__title"></h2>
                   <button
@@ -80,6 +80,7 @@
               Name
               <input
                 id="profile-name-input"
+                required
                 type="text"
                 class="modal__input"
                 placeholder="Type your name"
@@ -89,6 +90,7 @@
               Description
               <input
                 id="profile-description-input"
+                required
                 type="text"
                 class="modal__input"
                 placeholder="Describe yourself"
@@ -109,6 +111,7 @@
               Image link
               <input
                 id="card-image-input"
+                required
                 type="url"
                 class="modal__input"
                 placeholder="Paste a link to the picture"
@@ -118,6 +121,7 @@
               Caption
               <input
                 id="caption-input"
+                required
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
@@ -136,11 +140,7 @@
           >
             <img src="./images/previewclosebutton.svg" alt="close-button" />
           </button>
-          <img
-            src="https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg"
-            alt="demo"
-            class="modal__image"
-          />
+          <img src="#" alt="" alt="demo" class="modal__image" />
           <p class="modal__caption"></p>
         </div>
       </div>
