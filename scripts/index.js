@@ -128,9 +128,11 @@ newCloseButton.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
+// card form elements
 const newCardFormElement = newPostModal.querySelector(".modal__form");
 const imageInput = document.querySelector("#card-image-input");
 const captionInput = document.querySelector("#caption-input");
+const cardSubmitBtn = document.querySelector(".modal__submit-button");
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
@@ -141,6 +143,7 @@ function handleAddCardSubmit(evt) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   newCardFormElement.reset();
+  disableButton(cardSubmitBtn);
   closeModal(newPostModal);
 }
 newCardFormElement.addEventListener("submit", handleAddCardSubmit);
@@ -149,3 +152,5 @@ initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
 });
+
+// start form validation

@@ -92,10 +92,22 @@
   color: #2121214d;
 }
 
+.modal__input_type_error {
+  border: 1px solid rgba(255, 0, 0, 0.6);
+}
+
+.modal__error {
+  display: block;
+  color: red;
+  margin-top: 8px;
+  /* use correct color stuff */
+}
+
 .modal__label {
   font-size: 16px;
   font-weight: 500;
   margin: 0 0 32px;
+  display: block;
 }
 
 .modal__submit-button {
@@ -117,6 +129,12 @@
   cursor: pointer;
   background-color: #212121;
   opacity: 0.8;
+}
+
+.modal__button_disabled {
+  background-color: #c4c4c4;
+  color: #ababab;
+  cursor: not-allowed;
 }
 
 .modal__input:hover {
