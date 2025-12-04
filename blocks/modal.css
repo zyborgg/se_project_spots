@@ -98,9 +98,12 @@
 
 .modal__error {
   display: block;
-  color: red;
+  color: #ff0000;
+  opacity: 0.7;
   margin-top: 8px;
-  /* use correct color stuff */
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
 }
 
 .modal__label {
