@@ -97,13 +97,18 @@
 }
 
 .modal__error {
-  display: block;
+  visibility: hidden;
   color: #ff0000;
   opacity: 0.7;
   margin-top: 8px;
   font-size: 16px;
   font-weight: 500;
   font-family: Poppins, Arial, Helvetica, sans-serif;
+}
+
+.modal__error_visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 .modal__label {
