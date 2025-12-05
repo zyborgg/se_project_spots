@@ -30,6 +30,9 @@ heres my revision thank you so much for the review it really helped point me in 
 ## Deployment
 
 -Deployment link: https://zyborgg.github.io/se_project_spots or git@github.com:zyborgg/se_project_spots.git
+-video demonstrating the JavaScript validation that was implimented in spots stage 9: https://drive.google.com/file/d/1NQi5xhLBKQGIpzhx48zP1gDz0X3vY7Ay/view?usp=sharing
+
+links to demos of earlier project stages:
 -Video showcasing project link: https://drive.google.com/file/d/1fOQx4MpRSi5NVqOp-Q0aQW8R-7wf-kUO/view?usp=sharing
 -Video showing modal open and closing animations link: https://drive.google.com/file/d/1rz3BdzhAJ1z5YKwD6d__emV0XwLUBKKn/view?usp=sharing
 
