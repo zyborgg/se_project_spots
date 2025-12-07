@@ -1,6 +1,6 @@
 .modal {
   visibility: hidden;
-  background-color: #00000080;
+  background-color: rgba(33, 33, 33, 0.5);
   position: fixed;
   top: 0;
   left: 0;
@@ -139,7 +139,7 @@
   opacity: 0.8;
 }
 
-.modal__button_disabled {
+.modal__submit-button_disabled {
   background-color: #c4c4c4;
   color: #ababab;
   cursor: not-allowed;
@@ -175,7 +175,7 @@
   padding: 4px 8px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 320px) {
   .modal {
     padding-left: 12px;
     padding-right: 12px;
@@ -196,11 +196,16 @@
 
   .modal__input {
     font-size: 16px;
+    margin: 4px 0 0;
   }
 
   .modal__submit-button {
     width: 100%;
     max-width: none;
+  }
+
+  .modal__container {
+    padding: 32px 20px;
   }
 }
 

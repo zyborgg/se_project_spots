@@ -62,7 +62,6 @@ const previewModalImageEl = previewModal.querySelector(".modal__image");
 const previewModalCaption = previewModal.querySelector(".modal__caption");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close");
 const allModals = document.querySelectorAll(".modal");
-const modalOpen = document.querySelector(".modal_is-opened");
 
 // card related elements //
 const cardTemplate = document
