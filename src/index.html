@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,15 +9,13 @@
       name="keywords"
       content="spots, picture, pictures, photos, photo grid, picture grid"
     />
-    <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="icon" type="image/icon" href="./favicon.ico" />
     <title>Spots</title>
   </head>
   <body>
     <div class="page">
       <header class="header">
         <img
-          src="./images/logo.svg"
+          src="<%=require('./images/logo.svg')%>"
           alt="spots arrow logo"
           class="header__logo"
         />
@@ -25,7 +23,7 @@
       <main class="content">
         <section class="profile page__section">
           <img
-            src="./images/avatar.jpg"
+            src="<%=require('./images/avatar.jpg')%>"
             alt="Bessies Avatar"
             class="profile__avatar"
           />
@@ -34,7 +32,7 @@
             <p class="profile__description">Civil Aviator</p>
             <button class="profile__edit-button" type="button">
               <img
-                src="./images/Edit-Icon.svg"
+                src="<%=require('./images/Edit-Icon.svg')%>"
                 alt="pencil icon"
                 class="profile__edit"
               />Edit Profile
@@ -42,7 +40,7 @@
           </div>
           <button class="profile__add-button" type="button">
             <img
-              src="./images/plusicon.svg"
+              src="<%=require('./images/plusicon.svg')%>"
               alt="plus icon"
               class="profile__add"
             />New Post
@@ -72,7 +70,7 @@
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
           <button type="button" class="modal__close">
-            <img src="./images/close.svg" alt="close button" />
+            <img src="<%=require('./images/close.svg')%>" alt="close button" />
           </button>
           <h2 class="modal__title">Edit profile</h2>
           <form class="modal__form" novalidate>
@@ -112,7 +110,7 @@
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
           <button type="button" class="modal__close">
-            <img src="./images/close.svg" alt="close button" />
+            <img src="<%=require('./images/close.svg')%>" alt="close button" />
           </button>
           <h2 class="modal__title">New Post</h2>
           <form class="modal__form" novalidate>
@@ -151,14 +149,15 @@
             class="modal__close modal__close_type_preview"
             type="button"
           >
-            <img src="./images/previewclosebutton.svg" alt="close-button" />
+            <img
+              src="<%=require('./images/previewclosebutton.svg')%>"
+              alt="close-button"
+            />
           </button>
           <img src="#" alt="" class="modal__image" />
           <p class="modal__caption"></p>
         </div>
       </div>
     </div>
-    <script src="./scripts/validation.js"></script>
-    <script src="./scripts/index.js"></script>
   </body>
 </html>
