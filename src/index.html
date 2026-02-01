@@ -23,7 +23,7 @@
       <main class="content">
         <section class="profile page__section">
           <div class="profile__avatar-container">
-            <button class="profile__avatar-btn">
+            <button class="profile__avatar-button">
               <img
                 src="<%=require('./images/light-pencil.svg')%>"
                 alt="edit pencil"
@@ -179,20 +179,58 @@
           <img src="<%=require('./images/close.svg')%>" alt="close button" />
         </button>
         <h3 class="modal__title">Edit Avatar</h3>
-        <form class="modal__form" id="avatar-input" novalidate>
-          <label class="profile-avatar-input" for="profile-avatar-input">
+        <form class="modal__form" id="delete-modal" novalidate>
+          <label class="modal__label" for="profile-avatar-input">
+            Avatar link
+            <input
+              id=""
+              required
+              name="avatar"
+              type="url"
+              class=""
+              placeholder="Avatar URL"
+            />
+            <span class="modal__error" id=""></span>
+          </label>
+          <button
+            class="modal__submit-button avatar__submit-button"
+            type="submit"
+          >
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+    /* image delete modal stuff */
+    <div class="modal" id="avatar-modal">
+      <div class="modal__container">
+        <button
+          aria-label="close modal"
+          type="button"
+          class="modal__close modal__close_type_avatar"
+        >
+          <img src="<%=require('./images/close.svg')%>" alt="close button" />
+        </button>
+        <h3 class="modal__title">
+          Are you sure you want to delete this image?
+        </h3>
+        <form class="modal__form" id="avatar-form" novalidate>
+          <label class="modal__label avatar__label" for="profile-avatar-input">
             Avatar link
             <input
               id="profile-avatar-input"
               required
               name="avatar"
               type="url"
-              class="avatar__input"
+              class="modal__input avatar__input"
               placeholder="Avatar URL"
             />
-            <span class="modal__error" id="profile-avatar_type_error"></span>
+            <span class="modal__error" id="profile-avatar-type-error"></span>
           </label>
-          <button class="avatar__modal__submit-button" type="submit">
+          <button
+            class="modal__submit-button avatar__submit-button"
+            type="submit"
+          >
             Save
           </button>
         </form>

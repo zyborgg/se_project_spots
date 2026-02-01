@@ -11,7 +11,9 @@
   align-items: center;
   padding: 10px;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
   z-index: 1000;
 }
 
@@ -34,6 +36,9 @@
   border-radius: 8px;
   box-sizing: border-box;
 }
+
+/* inheritance styles for avatar modal not working
+tried: moving import statement, replacing class name for avatar__input to modal__input but no dice */
 
 .modal__close {
   position: absolute;

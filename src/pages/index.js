@@ -57,9 +57,14 @@ const allModals = document.querySelectorAll(".modal");
 
 // avatar elements //
 const avatarModal = document.querySelector("#avatar-modal");
+const avatarForm = document.querySelector("#avatar-form");
+const avatarInput = document.querySelector("#profile-avatar-input");
+const avatarButton = document.querySelector(".profile__avatar-button");
+const avatarSubmitButton = avatarModal.querySelector(".avatar__submit-button");
 const avatarCloseButton = avatarModal.querySelector(
   ".modal__close_type_avatar",
 );
+const avatarError = document.querySelector("#profile-avatar-type-error");
 
 // card related elements //
 const cardTemplate = document
@@ -161,6 +166,20 @@ function handleEditProfileSubmit(evt) {
     .catch(console.error);
 }
 
+function handleAvatarSubmit(evt) {
+  evt.preventDefault();
+  console.log(avatarInput.value);
+  //   api
+  //     .editUserAvatar({
+  //       profileAvatar.src = userInfo.avatar;
+  //     })
+  //     .then((data) => {
+  //       profileAvatar.src = userInfo.avatar;
+  //       closeModal(avatarModal);
+  //     })
+  //     .catch(console.error);
+}
+
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 newPostButton.addEventListener("click", function () {
@@ -185,14 +204,15 @@ function handleAddCardSubmit(evt) {
 }
 newCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
-// select avatar modal button at the top of the page //
-// avatarModalBtn.addEventListener("click", function () {
-//   openModal(newPostModal);
-// });
+avatarButton.addEventListener("click", function () {
+  openModal(avatarModal);
+});
 
-// avatarModalBtn.addEventListener("click", function () {
-//   closeModal(newPostModal);
-// });
+avatarCloseButton.addEventListener("click", function () {
+  closeModal(avatarModal);
+});
+
+// avatarForm.addEventListener("submit", handleAvatarSubmit);
 
 api
   .getAppInfo()
