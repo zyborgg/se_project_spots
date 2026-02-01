@@ -168,16 +168,25 @@ function handleEditProfileSubmit(evt) {
 
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
-  console.log(avatarInput.value);
-  //   api
-  //     .editUserAvatar({
-  //       profileAvatar.src = userInfo.avatar;
-  //     })
-  //     .then((data) => {
-  //       profileAvatar.src = userInfo.avatar;
-  //       closeModal(avatarModal);
-  //     })
-  //     .catch(console.error);
+  console.log("Avatar form submitted");
+  console.log("Avatar URL:", avatarInput.value);
+  const avatarUrl = avatarInput.value;
+
+  // Step 3: Show loading state ("Saving...")
+  // Step 4: Make the PATCH request
+  // Step 5: Handle success (update DOM, close modal)
+  // Step 6: Handle errors and reset button state
+
+  api
+    .editAvatarInfo({
+      avatar: avatarInput.value,
+    })
+    .then((data) => {
+      console.log(data);
+      avatarInput.value = data.avatar;
+      closeModal(avatarModal);
+    })
+    .catch(console.error);
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
@@ -212,7 +221,7 @@ avatarCloseButton.addEventListener("click", function () {
   closeModal(avatarModal);
 });
 
-// avatarForm.addEventListener("submit", handleAvatarSubmit);
+avatarForm.addEventListener("submit", handleAvatarSubmit);
 
 api
   .getAppInfo()
