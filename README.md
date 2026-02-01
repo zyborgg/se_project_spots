@@ -28,7 +28,7 @@ all images have been optimized to ensure fast load time
 heres my revision thank you so much for the review it really helped point me in the right direction, this assignment was tricky!
 
 ## Deployment
-
+new link: https://github.com/zyborgg/se_project_spots/pull/new/spots-final
 -Deployment link: https://zyborgg.github.io/se_project_spots/ or git@github.com:zyborgg/se_project_spots.git
 -video demonstrating the JavaScript validation that was implimented in spots stage 9: https://drive.google.com/file/d/1NQi5xhLBKQGIpzhx48zP1gDz0X3vY7Ay/view?usp=sharing
 
