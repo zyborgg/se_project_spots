@@ -55,6 +55,12 @@ const previewModalCaption = previewModal.querySelector(".modal__caption");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close");
 const allModals = document.querySelectorAll(".modal");
 
+// avatar elements //
+const avatarModal = document.querySelector("#avatar-modal");
+const avatarCloseButton = avatarModal.querySelector(
+  ".modal__close_type_avatar",
+);
+
 // card related elements //
 const cardTemplate = document
   .querySelector("#card-template")
@@ -179,16 +185,31 @@ function handleAddCardSubmit(evt) {
 }
 newCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
+// select avatar modal button at the top of the page //
+// avatarModalBtn.addEventListener("click", function () {
+//   openModal(newPostModal);
+// });
+
+// avatarModalBtn.addEventListener("click", function () {
+//   closeModal(newPostModal);
+// });
+
 api
   .getAppInfo()
   .then(([initialCards, userInfo]) => {
+    const userName = userInfo.name;
+    const userDescription = userInfo.about;
+    const profileAvatar = document.querySelector(".profile__avatar");
+    profileNameEl.textContent = userName;
+    profileDescriptionEl.textContent = userDescription;
+    profileAvatar.src = userInfo.avatar;
+
     initialCards.forEach(function (item) {
+      console.log("initialCards:", initialCards);
+      console.log("userInfo:", userInfo);
       const cardElement = getCardElement(item);
       cardsList.append(cardElement);
     });
-    // handle users info
-    // set src of avatar
-    // set textContent of both text elements
   })
   .catch(console.error);
 

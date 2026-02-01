@@ -22,11 +22,20 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img
-            src="<%=require('./images/avatar.jpg')%>"
-            alt="Bessies Avatar"
-            class="profile__avatar"
-          />
+          <div class="profile__avatar-container">
+            <button class="profile__avatar-btn">
+              <img
+                src="<%=require('./images/light-pencil.svg')%>"
+                alt="edit pencil"
+                class="profile__pencil-icon"
+              />
+            </button>
+            <img
+              src="<%=require('./images/avatar.jpg')%>"
+              alt="Bessies Avatar"
+              class="profile__avatar"
+            />
+          </div>
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
@@ -157,6 +166,36 @@
           <img src="#" alt="" class="modal__image" />
           <p class="modal__caption"></p>
         </div>
+      </div>
+    </div>
+    /* avatar modal stuff */
+    <div class="modal" id="avatar-modal">
+      <div class="modal__container">
+        <button
+          aria-label="close modal"
+          type="button"
+          class="modal__close modal__close_type_avatar"
+        >
+          <img src="<%=require('./images/close.svg')%>" alt="close button" />
+        </button>
+        <h3 class="modal__title">Edit Avatar</h3>
+        <form class="modal__form" id="avatar-input" novalidate>
+          <label class="profile-avatar-input" for="profile-avatar-input">
+            Avatar link
+            <input
+              id="profile-avatar-input"
+              required
+              name="avatar"
+              type="url"
+              class="avatar__input"
+              placeholder="Avatar URL"
+            />
+            <span class="modal__error" id="profile-avatar_type_error"></span>
+          </label>
+          <button class="avatar__modal__submit-button" type="submit">
+            Save
+          </button>
+        </form>
       </div>
     </div>
   </body>
