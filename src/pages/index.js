@@ -46,7 +46,7 @@ const newCloseButton = newPostModal.querySelector(".modal__close");
 // card form elements //
 const imageInput = document.querySelector("#card-image-input");
 const captionInput = document.querySelector("#caption-input");
-const cardSubmitButton = newPostModal.querySelector(".modal__submit-button");
+const cardSubmitButton = document.querySelector(".modal__submit-button");
 
 // preview image popup elements //
 const previewModal = document.querySelector("#preview-modal");
@@ -59,6 +59,7 @@ const allModals = document.querySelectorAll(".modal");
 const avatarModal = document.querySelector("#avatar-modal");
 const avatarForm = document.querySelector("#avatar-form");
 const avatarInput = document.querySelector("#profile-avatar-input");
+const avatarImage = document.querySelector(".profile__avatar");
 const avatarButton = document.querySelector(".profile__avatar-button");
 const avatarSubmitButton = avatarModal.querySelector(".avatar__submit-button");
 const avatarCloseButton = avatarModal.querySelector(
@@ -148,50 +149,62 @@ editProfileCloseButton.addEventListener("click", function () {
   closeModal(editProfileModal);
 });
 
-// MODEL FOR PRACTICES
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
+  renderButtonLoading(true);
   api
     .editUserInfo({
       name: editProfileNameInput.value,
       about: editProfileDescriptionInput.value,
     })
     .then((data) => {
-      // use data arguement instead of the input values
       profileNameEl.textContent = editProfileNameInput.value.trim();
       profileDescriptionEl.textContent =
         editProfileDescriptionInput.value.trim();
+      renderButtonLoading(false);
       closeModal(editProfileModal);
     })
-    .catch(console.error);
+    .catch((err) => {
+      console.error(err);
+      renderButtonLoading(false);
+    });
 }
 
+// Step 6: Handle errors and reset button state
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
-  console.log("Avatar form submitted");
-  console.log("Avatar URL:", avatarInput.value);
   const avatarUrl = avatarInput.value;
-
-  // Step 3: Show loading state ("Saving...")
-  // Step 4: Make the PATCH request
-  // Step 5: Handle success (update DOM, close modal)
-  // Step 6: Handle errors and reset button state
-
+  renderButtonLoading(true);
   api
     .editAvatarInfo({
       avatar: avatarInput.value,
     })
     .then((data) => {
-      console.log(data);
       avatarInput.value = data.avatar;
+      avatarImage.src = data.avatar;
+      renderButtonLoading(false);
       closeModal(avatarModal);
     })
-    .catch(console.error);
+    .catch((err) => {
+      console.error(err);
+      renderButtonLoading(false);
+    });
+}
+
+function renderButtonLoading(isLoading) {
+  if (isLoading) {
+    avatarSubmitButton.textContent = "Saving...";
+    cardSubmitButton.textContent = "Saving...";
+  } else {
+    avatarSubmitButton.textContent = "Save";
+    cardSubmitButton.textContent = "Save";
+  }
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 newPostButton.addEventListener("click", function () {
+  format.reset();
   openModal(newPostModal);
 });
 
@@ -201,15 +214,24 @@ newCloseButton.addEventListener("click", function () {
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  const inputValues = {
-    name: captionInput.value,
-    link: imageInput.value,
-  };
-  const cardElement = getCardElement(inputValues);
-  cardsList.prepend(cardElement);
-  newCardFormElement.reset();
-  disableButton(cardSubmitButton, config);
-  closeModal(newPostModal);
+  renderButtonLoading(true);
+  api
+    .addCard({
+      name: captionInput.value,
+      link: imageInput.value,
+    })
+    .then((data) => {
+      const cardElement = getCardElement(data);
+      cardsList.prepend(cardElement);
+      newCardFormElement.reset();
+      disableButton(cardSubmitButton, config);
+      renderButtonLoading(false);
+      closeModal(newPostModal);
+    })
+    .catch((err) => {
+      console.log(err);
+      renderButtonLoading(false);
+    });
 }
 newCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
@@ -234,8 +256,6 @@ api
     profileAvatar.src = userInfo.avatar;
 
     initialCards.forEach(function (item) {
-      console.log("initialCards:", initialCards);
-      console.log("userInfo:", userInfo);
       const cardElement = getCardElement(item);
       cardsList.append(cardElement);
     });
