@@ -50,7 +50,6 @@ class Api {
   }
 
   editAvatarInfo({ avatar }) {
-    console.log("Avatar URL being sent:", avatar);
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
@@ -82,6 +81,8 @@ class Api {
       }
     });
   }
+
+  // removeCard({})
 }
 
 export default Api;

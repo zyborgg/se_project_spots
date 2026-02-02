@@ -200,20 +200,23 @@
         </form>
       </div>
     </div>
-    /* image delete modal stuff */
-    <!-- <div class="modal modal_is-opened" id="delete-modal">
+    <!-- /* image delete modal stuff */
+     TODO style the modal -->
+    <div class="modal" id="delete-modal">
       <div class="modal__container">
-        <button aria-label="close modal" type="button" class="modal__close">
+        <button
+          aria-label="close modal"
+          type="button"
+          class="modal__close modal__close_type_delete"
+        >
           <img src="<%=require('./images/close.svg')%>" alt="close button" />
         </button>
         <h3 class="modal__title">
           Are you sure you want to delete this image?
         </h3>
-        <form class="modal__form" id="delete-form" novalidate>
-          <button class="modal__delete-button" type="submit">Delete</button>
-          <button class="modal__cancel-button" type="button">Cancel</button>
-        </form>
+        <button class="card__modal__delete-button" type="button">Delete</button>
+        <button class="card__cancel-button" type="button">Cancel</button>
       </div>
-    </div> -->
+    </div>
   </body>
 </html>
