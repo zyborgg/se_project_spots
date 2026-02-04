@@ -71,10 +71,8 @@ const avatarCloseButton = avatarModal.querySelector(
 
 // delete form elements //
 const deleteModal = document.querySelector("#delete-modal");
-const deleteConfirmButton = deleteModal.querySelector(
-  ".card__modal__delete-button",
-);
-const cardcancel = deleteModal.querySelector(".card__cancel-button");
+const deleteConfirmButton = deleteModal.querySelector(".modal__delete-button");
+const cardcancel = deleteModal.querySelector(".modal__cancel-button");
 const deleteModalClose = document.querySelector(".modal__close_type_delete");
 let selectedCard;
 let selectedCardId;
@@ -112,7 +110,7 @@ function handleDeleteSubmit(evt) {
     });
 }
 
-function getCardElement(data) {
+function getCardElement(data, api) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitleEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
@@ -123,7 +121,25 @@ function getCardElement(data) {
 
   const cardLikeButtonEl = cardElement.querySelector(".card__like-button");
   cardLikeButtonEl.addEventListener("click", () => {
-    cardLikeButtonEl.classList.toggle("card__like-button_active");
+    const isLiked = cardLikeButtonEl.classList.contains(
+      "card__like-button_active",
+    );
+
+    if (isLiked) {
+      api
+        .unlikeCard(data._id)
+        .then(() => {
+          cardLikeButtonEl.classList.remove("card__like-button_active");
+        })
+        .catch((err) => console.error(err));
+    } else {
+      api
+        .likeCard(data._id)
+        .then(() => {
+          cardLikeButtonEl.classList.add("card__like-button_active");
+        })
+        .catch((err) => console.error(err));
+    }
   });
 
   const deleteButton = cardElement.querySelector(".card__delete-button");
@@ -141,6 +157,11 @@ function getCardElement(data) {
     openModal(previewModal);
   });
 
+  if (data.isLiked) {
+    cardLikeButtonEl.classList.add("card__like-button_active");
+  } else {
+    cardLikeButtonEl.classList.remove("card__like-button_active");
+  }
   return cardElement;
 }
 
@@ -284,7 +305,7 @@ function handleAddCardSubmit(evt) {
       link: imageInput.value,
     })
     .then((data) => {
-      const cardElement = getCardElement(data);
+      const cardElement = getCardElement(data, api);
       cardsList.prepend(cardElement);
       newCardFormElement.reset();
       disableButton(cardSubmitButton, config);
@@ -319,7 +340,7 @@ api
     profileAvatar.src = userInfo.avatar;
 
     initialCards.forEach(function (item) {
-      const cardElement = getCardElement(item);
+      const cardElement = getCardElement(item, api);
       cardsList.append(cardElement);
     });
   })

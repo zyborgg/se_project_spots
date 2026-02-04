@@ -74,7 +74,7 @@
         </section>
       </main>
       <footer class="footer page__section">
-        <p class="footer__copyright">2025 &copy; Ziah C</p>
+        <p class="footer__copyright">2026 &copy; Ziah C</p>
       </footer>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
@@ -178,7 +178,7 @@
         </div>
       </div>
     </div>
-    <div class="modal" id="avatar-modal">
+    <div class="modal modal__type_avatar" id="avatar-modal">
       <div class="modal__container">
         <button
           aria-label="close modal"
@@ -197,7 +197,7 @@
               name="avatar"
               type="url"
               class="modal__input avatar__input"
-              placeholder="Avatar URL"
+              placeholder="Paste the link to an image"
             />
             <span class="modal__error" id="profile-avatar-input-error"></span>
           </label>
@@ -210,21 +210,25 @@
         </form>
       </div>
     </div>
-    <!--TODO style the modal -->
-    <div class="modal" id="delete-modal">
+    <div class="modal modal__type_confirm_delete" id="delete-modal">
       <div class="modal__container">
         <button
           aria-label="close modal"
           type="button"
           class="modal__close modal__close_type_delete"
         >
-          <img src="<%=require('./images/close.svg')%>" alt="close button" />
+          <img
+            src="<%=require('./images/close-white.svg')%>"
+            alt="close button"
+          />
         </button>
         <h3 class="modal__title">
           Are you sure you want to delete this image?
         </h3>
-        <button class="card__modal__delete-button" type="button">Delete</button>
-        <button class="card__cancel-button" type="button">Cancel</button>
+        <div class="modal__button__container">
+          <button class="modal__delete-button" type="button">Delete</button>
+          <button class="modal__cancel-button" type="button">Cancel</button>
+        </div>
       </div>
     </div>
   </body>

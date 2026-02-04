@@ -1,22 +1,21 @@
 # Project 3: Spots
 
-an image sharing website that can be used on desktop, tablet, and mobile!
+updated to spots stage 10 final stage
+an image sharing website that can be used on desktop, tablet, and mobile! Complete with fully functional buttons, cards, and modals that request and recieve responses from the API
 
 ## Tech Stack
 
 -HTML
 -CSS
 -Responsive design
+-JavaScript
+-API response
 
 ### Overview
 
 - Intro
 - Figma
 - Images
-
-**Intro**
-
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.
 
 **Figma**
 
@@ -25,17 +24,11 @@ This project is made so all the elements are displayed correctly on popular scre
 **Images**
 all images have been optimized to ensure fast load time
 
-heres my revision thank you so much for the review it really helped point me in the right direction, this assignment was tricky!
-
 ## Deployment
-new link: https://github.com/zyborgg/se_project_spots/pull/new/spots-final
--Deployment link: https://zyborgg.github.io/se_project_spots/ or git@github.com:zyborgg/se_project_spots.git
--video demonstrating the JavaScript validation that was implimented in spots stage 9: https://drive.google.com/file/d/1NQi5xhLBKQGIpzhx48zP1gDz0X3vY7Ay/view?usp=sharing
+
+-Deployment link: https://github.com/zyborgg/se_project_spots/pull/new/spots-final
 
 links to demos of earlier project stages:
 -Video showcasing project link: https://drive.google.com/file/d/1fOQx4MpRSi5NVqOp-Q0aQW8R-7wf-kUO/view?usp=sharing
 -Video showing modal open and closing animations link: https://drive.google.com/file/d/1rz3BdzhAJ1z5YKwD6d__emV0XwLUBKKn/view?usp=sharing
-
-updated to spots stage 10 final stage
-
-// temporary cut and paste
+-video demonstrating the JavaScript validation that was implimented in spots stage 9: https://drive.google.com/file/d/1NQi5xhLBKQGIpzhx48zP1gDz0X3vY7Ay/view?usp=sharing

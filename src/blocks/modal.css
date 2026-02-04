@@ -121,6 +121,7 @@ tried: moving import statement, replacing class name for avatar__input to modal_
   font-weight: 500;
   margin: 0 0 32px;
   display: block;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
 }
 
 .modal__submit-button {
@@ -136,6 +137,7 @@ tried: moving import statement, replacing class name for avatar__input to modal_
   height: 52px;
   border: none;
   cursor: pointer;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
 }
 
 .modal__submit-button:hover {
@@ -148,6 +150,66 @@ tried: moving import statement, replacing class name for avatar__input to modal_
   background-color: #c4c4c4;
   color: #ababab;
   cursor: not-allowed;
+}
+
+.modal__button__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.modal__delete-button {
+  background-color: #ff6565;
+  color: #212121;
+  outline-color: #212121;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  border-radius: 8px;
+  padding: 18px 32px;
+  width: 156px;
+  height: 52px;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  border: none;
+  cursor: pointer;
+}
+
+.modal__delete-button:hover {
+  cursor: pointer;
+  color: #212121;
+  background-color: #ff3333;
+}
+
+.modal__cancel-button {
+  background-color: #ffffff;
+  color: #212121;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  border-radius: 8px;
+  padding: 18px 32px;
+  width: 156px;
+  height: 52px;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  border: 2px solid rgba(33, 33, 33, 0.4);
+  box-sizing: border-box;
+}
+
+.modal__cancel-button:hover {
+  cursor: pointer;
+  background-color: #212121;
+  color: #ffffff;
+  border-color: #212121;
+}
+
+.modal__close_type_delete {
+  background: none;
+  background-repeat: no-repeat;
+  top: 0;
+  right: -50px;
+  opacity: 1;
 }
 
 .modal__input:hover {
@@ -178,6 +240,15 @@ tried: moving import statement, replacing class name for avatar__input to modal_
   display: inline-block;
   margin-top: 8px;
   padding: 4px 8px;
+}
+
+.modal__title {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: 500;
+  color: #212121;
 }
 
 @media screen and (max-width: 320px) {
@@ -227,5 +298,16 @@ tried: moving import statement, replacing class name for avatar__input to modal_
   .modal__caption {
     padding: 4px 8px;
     font-size: 16px;
+  }
+
+  .modal__button__container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .modal__close_type_delete {
+    top: -45px;
+    right: 0;
   }
 }
