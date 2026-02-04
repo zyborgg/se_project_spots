@@ -22,11 +22,20 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img
-            src="<%=require('./images/avatar.jpg')%>"
-            alt="Bessies Avatar"
-            class="profile__avatar"
-          />
+          <div class="profile__avatar-container">
+            <button class="profile__avatar-button">
+              <img
+                src="<%=require('./images/light-pencil.svg')%>"
+                alt="edit pencil"
+                class="profile__pencil-icon"
+              />
+            </button>
+            <img
+              src="<%=require('./images/avatar.jpg')%>"
+              alt="Bessies Avatar"
+              class="profile__avatar"
+            />
+          </div>
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
@@ -65,7 +74,7 @@
         </section>
       </main>
       <footer class="footer page__section">
-        <p class="footer__copyright">2025 &copy; Ziah C</p>
+        <p class="footer__copyright">2026 &copy; Ziah C</p>
       </footer>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
@@ -103,7 +112,12 @@
                 class="modal__error"
               ></span>
             </label>
-            <button type="submit" class="modal__submit-button">Save</button>
+            <button
+              type="submit"
+              class="modal__submit-button modal__submit_type_profile"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
@@ -138,7 +152,12 @@
               />
               <span id="caption-input-error" class="modal__error"></span>
             </label>
-            <button type="submit" class="modal__submit-button">Save</button>
+            <button
+              type="submit"
+              class="modal__submit-button modal__submit_type_card"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
@@ -156,6 +175,59 @@
           </button>
           <img src="#" alt="" class="modal__image" />
           <p class="modal__caption"></p>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal__type_avatar" id="avatar-modal">
+      <div class="modal__container">
+        <button
+          aria-label="close modal"
+          type="button"
+          class="modal__close modal__close_type_avatar"
+        >
+          <img src="<%=require('./images/close.svg')%>" alt="close button" />
+        </button>
+        <h3 class="modal__title">Edit profile avatar</h3>
+        <form class="modal__form" id="avatar-form" novalidate>
+          <label class="modal__label avatar__label" for="profile-avatar-input">
+            Profile Picture
+            <input
+              id="profile-avatar-input"
+              required
+              name="avatar"
+              type="url"
+              class="modal__input avatar__input"
+              placeholder="Paste the link to an image"
+            />
+            <span class="modal__error" id="profile-avatar-input-error"></span>
+          </label>
+          <button
+            class="modal__submit-button avatar__submit-button"
+            type="submit"
+          >
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="modal modal__type_confirm_delete" id="delete-modal">
+      <div class="modal__container">
+        <button
+          aria-label="close modal"
+          type="button"
+          class="modal__close modal__close_type_delete"
+        >
+          <img
+            src="<%=require('./images/close-white.svg')%>"
+            alt="close button"
+          />
+        </button>
+        <h3 class="modal__title">
+          Are you sure you want to delete this image?
+        </h3>
+        <div class="modal__button__container">
+          <button class="modal__delete-button" type="button">Delete</button>
+          <button class="modal__cancel-button" type="button">Cancel</button>
         </div>
       </div>
     </div>
