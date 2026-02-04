@@ -17,10 +17,6 @@ an image sharing website that can be used on desktop, tablet, and mobile! Comple
 - Figma
 - Images
 
-**Figma**
-
-- [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-
 **Images**
 all images have been optimized to ensure fast load time
 
@@ -28,7 +24,5 @@ all images have been optimized to ensure fast load time
 
 -Deployment link: https://github.com/zyborgg/se_project_spots/pull/new/spots-final
 
-links to demos of earlier project stages:
--Video showcasing project link: https://drive.google.com/file/d/1fOQx4MpRSi5NVqOp-Q0aQW8R-7wf-kUO/view?usp=sharing
--Video showing modal open and closing animations link: https://drive.google.com/file/d/1rz3BdzhAJ1z5YKwD6d__emV0XwLUBKKn/view?usp=sharing
--video demonstrating the JavaScript validation that was implimented in spots stage 9: https://drive.google.com/file/d/1NQi5xhLBKQGIpzhx48zP1gDz0X3vY7Ay/view?usp=sharing
+-Link to project pitch video: https://www.loom.com/share/c1ef139798e746bbaca0a1b758eebac2
+(sorry it wont let me download it and add to my google drive)
